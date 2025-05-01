@@ -95,11 +95,8 @@ function renderImages(images) {
  const markup = imagesTamplate(images);
  gallaryEl.innerHTML = markup; 
 }
-renderImages(images);
 
 function initGallery() {
- renderImages(images);
-
 const lightbox = new SimpleLightbox('.gallery a', {
  captions: true,                  
  captionsData: 'alt',             
@@ -113,5 +110,8 @@ const lightbox = new SimpleLightbox('.gallery a', {
 }
 
 // Ініціалізація галереї
-document.addEventListener('DOMContentLoaded', initGallery);
+document.addEventListener('DOMContentLoaded', ()=> { 
+  renderImages(images);
+  initGallery(); } 
+);
 

@@ -19,7 +19,6 @@ refs.form.addEventListener('submit', onFormSubmit);
 refs.form.addEventListener('input', evt => {
  formData[evt.target.name] = evt.target.value;            // зберегли дані з форми = formData.email = evt.currentTarget.value; або === formData.message = evt.currentTarget.value; 
  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData)); // засетали в локал сторедж це значення 
- console.log(formData);
 })
 
 // form
@@ -31,6 +30,11 @@ function onFormSubmit(evt) {
   return  alert("Fill please all fields");
  } 
   console.log(formData);
+
+  formData = {
+   email: "",
+   message: ""
+  }
 
   form.reset();
                                // очищаем форму

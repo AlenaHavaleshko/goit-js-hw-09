@@ -12,8 +12,6 @@ p:last-child {
   margin-bottom: 0;
 }
 
-
-
 ul {
   margin: 0;
   padding: 0;
@@ -23,6 +21,11 @@ ul {
 a {
   color: currentColor;
   text-decoration: none;
+}
+
+a:active {
+  color: rgb(183, 0, 255);
+  text-decoration: underline;
 }
 
 button {
