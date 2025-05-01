@@ -16,9 +16,9 @@ populateForm();    // додаємо перед реєстрацією слух�
 refs.form.addEventListener('submit', onFormSubmit);
 
 
-refs.form.addEventListener('input', e => {
- formData[e.target.name] = e.target.value;       // = formData.email = evt.currentTarget.value; або === formData.message = evt.currentTarget.value; 
- localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+refs.form.addEventListener('input', evt => {
+ formData[evt.target.name] = evt.target.value;            // зберегли дані з форми = formData.email = evt.currentTarget.value; або === formData.message = evt.currentTarget.value; 
+ localStorage.setItem(STORAGE_KEY, JSON.stringify(formData)); // засетали в локал сторедж це значення 
  console.log(formData);
 })
 
@@ -32,7 +32,8 @@ function onFormSubmit(evt) {
  } 
   console.log(formData);
 
-  form.reset();                             // очищаем форму
+  form.reset();
+                               // очищаем форму
   localStorage.removeItem(STORAGE_KEY);     // видаляємо повідомлення зі сховища 
  };
 
